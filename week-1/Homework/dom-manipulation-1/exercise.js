@@ -5,8 +5,9 @@ Write JavaScript below that logs:
     1. all the "p" element nodes of the document,
     --> should log a list of nodes with a length of 6 */
 
- let paragraph = document.querySelectorAll('p')
- console.log(paragraph.length <= 6)
+let paragraph = document.querySelectorAll('p').length <= 6
+
+console.log(paragraph)
 
 /*
     2. the first div element node
@@ -28,8 +29,8 @@ console.log(jumbotron)
 /*  4. all the "p" elements of contained inside  the .primary-content element node
     --> should log a list of nodes with a length of 3 */
 
-  let p =  document.querySelectorAll('p >.primary-content')
-  console.log(p.length <= 3)
+let p = document.querySelectorAll('p >.primary-content')
+console.log(p.length <= 3)
 
 /*
 Task 2
@@ -37,30 +38,47 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
-const button = document.getElementById("alertBtn")
-button.onclick = mostrarAlerta; 
+let button = document.getElementById('alertBtn')
+button.addEventListener('click', mostrarAlerta)
 
-function mostrarAlerta() {
-    alert("Thanks for visiting Bikes for Refugees!");
-  }
-
-  console.log(mostrarAlerta(button));
+function mostrarAlerta () {
+  alert('Thanks for visiting Bikes for Refugees!')
+}
   
+ 
+
 /*
 Task 3
 =======
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
+let but = document.getElementById('alertBtn')
+but.addEventListener('click', clicar)
+but.addEventListener('mouseenter', enter)
+but.addEventListener('mouseout', exit)
 
-
-
+function clicar () {
+    but.style.background = 'red'
+}
+function exit () {
+    but.style.background = 'white'
+}
+function enter () {
+    but.style.background = 'red'
+}
 /*
 Task 4
 ======
+When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE” */
 
-When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
-*/
+
+
+/*function insereTexto () {
+  document.getElementById('addTextBtn').innerHTML = 'Teste inserindo texto.'
+}
+
+console.log(insereTexto())
 
 /*
 Task 5
