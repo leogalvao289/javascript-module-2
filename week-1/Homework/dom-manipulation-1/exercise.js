@@ -5,7 +5,7 @@ Write JavaScript below that logs:
     1. all the "p" element nodes of the document,
     --> should log a list of nodes with a length of 6 */
 
-let paragraph = document.querySelectorAll('p').length <= 6
+let paragraph = document.querySelectorAll('p')
 
 console.log(paragraph)
 
@@ -28,10 +28,10 @@ console.log(jumbotron)
 
 /*  4. all the "p" elements of contained inside  the .primary-content element node
     --> should log a list of nodes with a length of 3 */
+    
+    let matches = document.querySelectorAll(".primary-content > p");
 
-let p = document.querySelectorAll('p >.primary-content')
-console.log(p.length <= 3)
-
+   console.log(matches)
 /*
 Task 2
 ======
@@ -71,14 +71,15 @@ function enter () {
 Task 4
 ======
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE” */
+let botao = document.getElementById ('addArticleBtn')
+botao.addEventListener('click', addPara)
 
-
-
-/*function insereTexto () {
-  document.getElementById('addTextBtn').innerHTML = 'Teste inserindo texto.'
-}
-
-console.log(insereTexto())
+function addPara() {
+    let h = document.createElement("p");
+    let t = document.createTextNode("");
+    h.appendChild(t);
+    document.body.appendChild(h);
+  }
 
 /*
 Task 5
@@ -86,6 +87,16 @@ Task 5
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
+
+let largerLinksBtn = document.getElementById ('largerLinksBtn')
+largerLinksBtn.addEventListener('click' , fonte)
+
+function fonte(e){
+	let elemento = $(".facebook-link");
+	let fonte = elemento.css('font-size');
+	e == elemento.css("fontSize", parseInt(fonte) + 1);
+}
+	
 
 /*
 Task 6
@@ -95,6 +106,8 @@ Using the same function in Task 4,
 When the 'Add' button is clicked, get the text inside the input field and create a new paragraph in the "LEARN MORE" section
 Also clear the text inside the input field
 */
+
+
 
 /*
 Task 7
