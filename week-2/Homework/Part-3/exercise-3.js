@@ -16,8 +16,16 @@ let coffeeMachine = {
       flatWhite: 3.0,
     },
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
+    insertMoney: function (amount) {
+      this.insertedAmount = amount
+    },
+    getCoffee: function (coffee) {
+      this.prices[coffee]                                  // this.insertedAmount =>  es para chamar um parametro de outra funçao
+      if (this.insertedAmount >= this.prices[coffee]) {     // this.prices[coffee]     transforma para poder comparar a STRING de outra funçao
+           return 'Please take your ' + coffee; 
+    }  
+       return  'Sorry you dont have enough money for a ' + coffee; 
+    },
   };
   
   /*

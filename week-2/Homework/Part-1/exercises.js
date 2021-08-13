@@ -17,6 +17,10 @@ function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
 }
 
+arrayOfPeople.forEach(element => {
+  let 
+  
+});
 /**
  *
  * Create a list of shopping items. You should use an unordered list.

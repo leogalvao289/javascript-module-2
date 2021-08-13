@@ -11,3 +11,10 @@ let laptop = {
     screenSize: 13,
     isTouchscreen: true,
   };
+  
+  let notebook = {
+      brand: "LG", 
+      screenSize: 15,
+     isTouchscreen: false,
+
+  };

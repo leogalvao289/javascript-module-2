@@ -9,7 +9,7 @@ A person named Alice is defined below.
 let person = {
     name: "Alice",
     age: 25,
-  };
+  }; 
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
