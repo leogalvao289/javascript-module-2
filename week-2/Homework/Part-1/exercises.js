@@ -13,14 +13,20 @@
  *      .....
  * </div>
  */
-function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
+function exerciseOne (arrayOfPeople) {
+  let content = document.querySelector('#content')
+  arrayOfPeople.forEach(person => {
+    const name = document.createElement('h1')
+    const job = document.createElement('h2')
+
+    name.textContent = person.name
+    job.textContent = person.job
+
+    content.appendChild(name)
+    content.appendChild(job)
+  })
 }
 
-arrayOfPeople.forEach(element => {
-  let 
-  
-});
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
@@ -28,31 +34,28 @@ arrayOfPeople.forEach(element => {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
-function exerciseTwo(shopping) {
-  //Write your code in here
+
+function exerciseTwo (shopping) {
+  const content = document.querySelector(
+    '#content'
+  ) /* seleciona o conteudo da tag  */
+  const ulElement = document.createElement(
+    'ul'
+  ) /* cria o elemento lista desordenada */
+  content.appendChild(ulElement)
+
+  shopping.forEach(list => {
+    const listElement = document.createElement('li')
+    listElement.innerHTML = list
+    ulElement.appendChild(listElement)
+  })
 }
 
-/**
+/*
     I'd like to display my three favorite books inside a nice webpage!
+*/
 
-    const books = [
-        {
-            title: "The Design of Everyday Things",
-            author: "Don Norman",
-            alreadyRead: false
-        },
-        {
-            title: "The Most Human Human",
-            author: "Brian Christian",
-            alreadyRead: true
-        },
-        {
-            title: "The Pragmatic Programmer",
-            author: "Andrew Hunt",
-            alreadyRead: true
-        }
-    ];
-
+/*
     Iterate through the array of books.
     - For each book, create a <p> element with the book title and author and append it to the page.
     - Use a <ul> and <li> to display the books.
@@ -61,8 +64,21 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
-function exerciseThree(books) {
-  //Write your code in here
+function exerciseThree (books) {
+  const ulDisplay = document.createElement('ul')
+
+  books.forEach(book => {
+    const listBooks = document.createElement('li')
+    const bookObj = document.createElement('p')
+    bookObj.textContent = `${book.title}` - `${book.author}`; /* insere o conteudo na tag criada */
+    const bookCapa = document.createElement('img') /* cria o elemento */ 
+    bookCapa.setAttribute('src', book.image) /* insere a imagem */
+    
+    listBooks.appendChild(bookObj)
+    listBooks.appendChild(bookCapa)
+    ulDisplay.appendChild(listBooks)
+  })
+  document.body.appendChild(ulDisplay)
 }
 
 //
@@ -76,33 +92,36 @@ function exerciseThree(books) {
 //
 
 let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
-];
+  { name: 'Chris', job: 'Teacher' },
+  { name: 'Joanna', job: 'Student' },
+  { name: 'Boris', job: 'Prime Minister' }
+]
 
-exerciseOne(people);
+exerciseOne(people)
 
-let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
+let shopping = ['Milk', 'Break', 'Eggs', 'A Dinosaur', 'Cake', 'Sugar', 'Tea']
 
-exerciseTwo(shopping);
+exerciseTwo(shopping)
 
 const books = [
   {
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    alreadyRead: false
+    title: 'The Design of Everyday Things',
+    author: 'Don Norman',
+    alreadyRead: false,
+    image: './img/every.jpg'
   },
   {
-    title: "The Most Human Human",
-    author: "Brian Christian",
-    alreadyRead: true
+    title: 'The Most Human Human',
+    author: 'Brian Christian',
+    alreadyRead: true,
+    image: './img/human.jpg'
   },
   {
-    title: "The Pragmatic Programmer",
-    author: "Andrew Hunt",
-    alreadyRead: true
+    title: 'The Pragmatic Programmer',
+    author: 'Andrew Hunt',
+    alreadyRead: true,
+    image: './img/programmer.jpg'
   }
-];
+]
 
-exerciseThree(books);
+exerciseThree(books)
