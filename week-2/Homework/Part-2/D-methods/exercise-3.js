@@ -11,8 +11,8 @@ let person = {
     changeAddress: (newAddress) => { 
         currentAddress = newAddress;
     },
-    celebrateBirthday: function {
-        that.age = that.age + 1;
+    celebrateBirthday: function (age) {
+        this.age = this.age + 1;
     }
 };
 
