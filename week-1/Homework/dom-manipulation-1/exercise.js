@@ -77,15 +77,16 @@ Task 4
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE” */
 
 const addTextBcn = document.querySelector('#addtextBtn') // llamo el boton con la Jquery
-const mainArticles = document.querySelector('#mainArticles') //llamo el sitio dondo va el texto
+
 addTextBcn.addEventListener('click', () => {
   addP('hi everyone');
 })
 
 function addP (text) {
+  const pContainer = document.querySelector('#mainArticles')
   const para = document.createElement('p') // const para crear el elemento para insertar
   para.textContent = text || 'lorem ipsum'  // tomara el valor por defecto 
-  mainArticles.appendChild(para)
+  pContainer.appendChild(para)
 }
 
 /*
@@ -131,4 +132,23 @@ Using the same function in Task 3, every time the 'Change colour' button is clic
 The next color when you are in the last color of the array will be the first color again.
 */
 
-const arrColors = ['blue', 'orange' , 'red' , 'yellow']
+const arrColors = ['blue', 'orange' , 'red' , 'yellow', 'black'] 
+
+const but = document.getElementById('bgrChangeBtn')
+but.addEventListener('click', event => {
+    clicar(event)
+})
+
+function clicar (event, color) {
+    const arrColors = ['blue', 'orange' , 'red' , 'yellow']
+    event.preventDefault();
+    const body = document.querySelector('body');
+    const bodyColor = body.style.backgroundColor;
+    let colorIndex = arrColors.indexOf(bodyColor);
+
+    if (colorIndex === -1 || (colorIndex === arrColors.length -1)) {
+       body.style.backgroundColor = color || arrColors[0];
+    } else {
+        body.style.backgroundColor = color || arrColors[colorIndex + 1];
+}
+}
