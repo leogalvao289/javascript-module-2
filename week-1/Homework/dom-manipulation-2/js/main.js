@@ -31,7 +31,7 @@ greenBtn.addEventListener('click', e => {
   chgColor('#87ca8a', 'black', '#8c9c08')
 })
 
-/* Task 2 */
+/* Task 2 
 
 const mail = document.querySelector('#exampleInputEmail1')
 const name = document.querySelector('#example-text-input')
@@ -76,4 +76,44 @@ submit.addEventListener('click', (e) => {
     mail.addEventListener('focusout', login())
     alert('you must fill all the form')
   }
+})
+
+
+/* Other option  Task 2 */
+
+const checkInputs = (inputs) => {
+  inputs.forEach((input) => {
+    if (inputs.value === "") {
+      input.style.backgroundColor = "red";
+    }
+  });
+};
+
+const checkLengthAndDisplayAlert = (email, name , description, inputs) => {
+  if(checkEmail(email)){
+  if (email.value !== "" && name.value !== "" && description.value !== "") {
+    inputs.forEach((input) => {
+      input.value = "";
+      input.style.backgroundColor = 'fff'
+    });
+    alert ('Thank you for filling out the form');
+  }
+  } else {
+    email.style.backgroundColor = "red"
+  }
+};
+
+const checkEmail = (email) => {
+  return email.value.includes("@");
+};
+
+document.querySelector('form').addEventListener('submit', (e) => {
+ e.preventDefault();
+ const email = e.target.elements.exampleInputEmail1;
+ const name = e.target.elements.exampleTextInput;
+ const description = e.target.elements.exampleTextArea;
+ const inputs = [email, name , description];
+
+ checkInputs(inputs);
+ checkLengthAndDisplayAlert(email, name, description, inputs)
 })
