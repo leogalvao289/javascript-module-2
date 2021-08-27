@@ -8,13 +8,15 @@ A person named Alice is defined below.
 
 let person = {
     name: "Alice",
-    age: 25,
+    age: 25, 
+    greet: function () {                        /* crear la prorpriedade con la function dentro */
+      return "Hello everybody";
+    }, 
+    sayName: function () {
+     return `My name is ${this.name}`           /* usar THIS para chamar a propriedade */
+    }
   }; 
 
-
-   function greet () {
-     return  this.name;
-   }
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE

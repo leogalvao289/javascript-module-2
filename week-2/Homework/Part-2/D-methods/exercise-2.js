@@ -15,4 +15,3 @@ let person = {
         return this.age = this.age + 1;
     }
 };
-

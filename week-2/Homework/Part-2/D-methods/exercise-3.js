@@ -7,7 +7,7 @@ Once you fix them, run this file, it should output the correct values!
 let person = {
     name: "Alice",
     age: 25,
-    currentAddress: "Glasgow",
+    currentAddress: "Edinburgh",
     changeAddress: (newAddress) => { 
         currentAddress = newAddress;
     },
