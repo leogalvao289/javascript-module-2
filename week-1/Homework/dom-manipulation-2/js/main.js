@@ -31,7 +31,7 @@ greenBtn.addEventListener('click', e => {
   chgColor('#87ca8a', 'black', '#8c9c08')
 })
 
-/* Task 2 
+/* Task 2 */
 
 const mail = document.querySelector('#exampleInputEmail1')
 const name = document.querySelector('#example-text-input')

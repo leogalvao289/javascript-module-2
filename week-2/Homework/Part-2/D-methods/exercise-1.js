@@ -10,6 +10,11 @@ let person = {
     name: "Alice",
     age: 25,
   }; 
+
+
+   function greet () {
+     return  this.name;
+   }
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
