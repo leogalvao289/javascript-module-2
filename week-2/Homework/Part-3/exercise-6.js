@@ -111,7 +111,7 @@ mentors that are in Barcelona and one of the skills is React
 "Hi, my name is {firstName} {lastName}. I work in Barcelona and i know React." */
 
 mentors.forEach(mentor => { 
-  if (mentor.job.city.includes('Barcelona') && mentor.skills.includes('React'))
+  if (mentor.job.city ==='Barcelona' && mentor.skills.includes('React'))
 console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`)
 })
 
@@ -119,7 +119,9 @@ console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Ba
 and add a new skill to the list "SQL".
 To add elements in an array you can use .push()
 */
-mentors.forEach(item => { item.skills.push('SQL')  
+mentors.forEach(mentor => { 
+  mentor.class = 'Jun1';
+  mentor.skills.push('SQL')  
 })
 console.log(mentors);
 
