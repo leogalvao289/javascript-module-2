@@ -51,7 +51,7 @@ function addSkill (mentors, Skill) {
     function mentorWithMoreSkills(mentors) {
     let result = 0;
     let indexMentor = 0;
-    mentors.forEach(mentor, index => {
+    mentors.forEach((mentor, index) => {
       if(result < mentor.skills.length){
         result = mentor.skills.length;
         indexMentor = index;
