@@ -6,21 +6,65 @@ Task 1
 Create a function called "showMovies" that
 - iterates through the "movies" array and
 - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
-- it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
+- it sets the innerText of the #movies-number element to the total number of the movies in the array "movies" */
 
-Task 2
+
+
+//Create a function called "showMovies" that
+
+const showMovies = function(movies) {
+  setTimeout(function() {
+  const moviesNumber = document.querySelector('#movies-number')
+  moviesNumber.innerHTML = movies.length;
+  const allMoviesDiv = document.querySelector('#all-movies');
+  allMoviesDiv.innerHTML = `<p class="alert alert-info">Number of movies: <span id="movies-number">${movies.length}</span></p>`
+  
+  // - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
+  movies.forEach((movie, index) => {
+  setTimeout(function() {
+    const movieTitleAndDirector = document.createElement('p');
+  movieTitleAndDirector.innerText = `${movie.title} - ${movie.director}`
+  }, 1000 * (index));
+});
+})
+  
+
+/* Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
 - it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
-How many movies can you see on your page?
+How many movies can you see on your page? */
 
-Task 3
+const setMovie = (titleValue, dirValue, typeValue, haveWatchedValue) => {
+  const newMovieObj = {
+    title: titleValue,
+    director: dirValue,
+    type: typeValue,
+    haveWatched: haveWatchedValue,
+  };
+  return newMovieObj; 
+}
+
+showMovies(movies)
+
+/* Task 3
 Can you make sure the new movie you just added is showing on the screen? 
-TIP: use callbacks
+TIP: use callbacks */
 
-Task 4
+const addMovies = (movieObj) => {
+  setTimeout(function() {
+  movies.push(movieObj)
+  showMovies(movies)
+} ,2000 )
+}
+
+addMovies(setMovie('Shrek', 'Andrew Adamson', 'Comedy' , true))
+
+console.log(movies)
+
+/* Task 4
 Create a form anywhere on your page. The form should have
 - 4 input text fields, one for each property of your movie object
 - a "save" button.
@@ -31,6 +75,21 @@ TIP: Use the functions you created on tasks 1-3
 
 ================
 */
+
+console.log(document.querySelector('#add-movies'));
+document.querySelector('#add-movies').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const movieTitle = document.querySelector('#movie-title').value;
+  const movieDirector = document.querySelector('#movie-director').value;
+  const movieType = document.querySelector('#movie-type').value;
+  const haveWatched = document.querySelector('#have-watched').checked;
+  const newMovie = setmovie(movieTitle,movieDirector,movieType, haveWatched);
+  console.log(newMovie);
+  addMovies(newMovie)
+})
+
+
+
 var movies = [
   {
     title: "Color Out of Space",
@@ -65,3 +124,4 @@ var movies = [
 
 
 // create addMovies function
+}
